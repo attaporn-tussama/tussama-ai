@@ -1,0 +1,6 @@
+{
+  "name": "tussama-secretary-ai",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ระบบเลขา AI ของ TUSSAMA ที่กระจายงานไปแผนกต่างๆ ผ่าน Anthropic API"
+}
