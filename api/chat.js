@@ -8,9 +8,10 @@ const DATA_SOURCES = {
   sales:
     "https://docs.google.com/spreadsheets/d/e/2PACX-1vQQeUdSOq0YOSz8t-dcKA5IPjlKjKU_8Qb-dfrSoUP6FJfjZ_CdM9wTPbhhSNkLNvErlrfsdujXLZh6/pub?gid=0&single=true&output=csv",
   accounting:
-    "https://docs.google.com/spreadsheets/d/e/2PACX-1vQQeUdSOq0YOSz8t-dcKA5IPjlKjKU_8Qb-dfrSoUP6FJfjZ_CdM9wTPbhhSNkLNvErlrfsdujXLZh6/pub?gid=1337484610&single=true&output=csv"
-  // เพิ่มแผนกถัดไปในรูปแบบเดียวกันนี้ได้เลย เช่น:
-  // manufacturing: "ลิงก์ CSV ของชีทประสานผู้ผลิต"
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vQQeUdSOq0YOSz8t-dcKA5IPjlKjKU_8Qb-dfrSoUP6FJfjZ_CdM9wTPbhhSNkLNvErlrfsdujXLZh6/pub?gid=1337484610&single=true&output=csv",
+  manufacturing:
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vQQeUdSOq0YOSz8t-dcKA5IPjlKjKU_8Qb-dfrSoUP6FJfjZ_CdM9wTPbhhSNkLNvErlrfsdujXLZh6/pub?gid=541678466&single=true&output=csv"
+  // เพิ่มแผนกถัดไปในรูปแบบเดียวกันนี้ได้เลย
 };
 
 // ดึงข้อมูล CSV จริงจาก Google Sheet ของแผนกนั้นๆ
