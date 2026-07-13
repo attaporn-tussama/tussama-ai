@@ -349,11 +349,12 @@ function buildSynthesisPrompt() {
 }
 
 // เรียกเซิร์ฟเวอร์ของเราเอง (/api/chat) แทนที่จะเรียก Anthropic ตรงๆ
-async function callClaude(systemPrompt, userMessage) {
+// department (ถ้ามี) จะบอกเซิร์ฟเวอร์ว่าต้องดึงข้อมูลจริงของแผนกไหนมาแปะให้ก่อนตอบ
+async function callClaude(systemPrompt, userMessage, department) {
   const response = await fetch("/api/chat", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ system: systemPrompt, message: userMessage })
+    body: JSON.stringify({ system: systemPrompt, message: userMessage, department: department || null })
   });
 
   const data = await response.json();
@@ -382,7 +383,7 @@ async function routeToDepartments(userMessage) {
 async function delegateToDepartments(departmentKeys, userMessage) {
   const calls = departmentKeys.map(async (key) => {
     const dept = DEPARTMENTS[key];
-    const answer = await callClaude(dept.systemPrompt, userMessage);
+    const answer = await callClaude(dept.systemPrompt, userMessage, key);
     return { key, label: dept.label, answer };
   });
   return Promise.all(calls);
